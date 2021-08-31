@@ -1,0 +1,11 @@
+.edit-friend-root {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-friend-root .viewer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.8rem;
+}

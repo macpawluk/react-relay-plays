@@ -1,0 +1,81 @@
+type Query {
+  friends: [Friend]
+  friend(id: ID): Friend
+  viewer: Viewer
+}
+
+type Friend {
+  id: ID
+  firstName: String!
+  lastName: String!
+  gender: String
+  language: String
+  email: String
+  image: String
+  viewer: Viewer!
+}
+
+type Viewer {
+  id: ID
+  name: String!
+  friends(
+    """Returns the items in the list that come after the specified cursor."""
+    after: String
+
+    """Returns the first n items from the list."""
+    first: Int
+
+    """Returns the items in the list that come before the specified cursor."""
+    before: String
+
+    """Returns the last n items from the list."""
+    last: Int
+  ): FriendConnection
+}
+
+"""A connection to a list of items."""
+type FriendConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [FriendEdge]
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+"""An edge in a connection."""
+type FriendEdge {
+  """The item at the end of the edge"""
+  node: Friend
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+type Mutation {
+  updateFriend(friend: FriendInput): Friend
+}
+
+input FriendInput {
+  id: ID
+  firstName: String
+  lastName: String
+  gender: String
+  language: String
+  email: String
+  image: String
+}

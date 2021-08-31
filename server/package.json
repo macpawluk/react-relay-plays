@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "start": "babel-node ./server.js",
+    "update-schema": "babel-node ./scripts/updateSchema.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.2",
+    "relay-compiler": "^1.0.0"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.1",
+    "graphql-relay": "^0.8.0",
+    "webpack": "5.50.0",
+    "webpack-dev-server": "3.11.2",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "license": "UNLICENSED"
+}
